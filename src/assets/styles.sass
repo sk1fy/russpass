@@ -1,0 +1,36 @@
+:root
+  --header: #FFD600
+  --white-color: #FFF6C9
+
+[data-theme="dark"]
+  --bg-color1: #121416
+  --font-color: #f4f4f4
+
+[data-theme="light"]
+  --bg-color1: #f4f4f4
+  --font-color: #121416
+body
+  background-color: var(--bg-color1)
+  color: var(--font-color)
+  font-family: 'Microsoft Sans Serif'
+
+#app
+  margin: 0 auto
+  font-weight: normal
+  min-height: 100vh
+
+
+.container
+  max-width: 1440px
+  margin: auto
+  @media (max-width: 1024px)
+    padding: 0 6.4px
+
+.d-flex
+  display: flex
+
+.flex-row
+  flex-direction: row
+
+.flex-column
+  flex-direction: column
