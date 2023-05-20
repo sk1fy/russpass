@@ -1,11 +1,14 @@
-<script>
-export default {
-  name: "AppLayoutBlue",
-}
+<script setup>
+import { onMounted, inject } from 'vue';
+
+
+const { setBlueTheme } = inject('mainTheme')
+onMounted(() => {
+  setBlueTheme()
+});
 </script>
 <template>
-  <div style="background: #C0C9EC;">
-    <header class="header" >App Layout Pink</header>
+  <div class="blue-layout">
     <slot />
   </div>
 </template>

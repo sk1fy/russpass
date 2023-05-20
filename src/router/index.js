@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LayoutDefult from '../layouts/AppLayoutDefault.vue'
-import LayoutA from '../layouts/AppLayoutPink.vue'
+// import LayoutA from '../layouts/AppLayoutPink.vue'
 import LayoutB from '../layouts/AppLayoutBlue.vue'
 
 const routes = [
@@ -16,7 +16,7 @@ const routes = [
     name: 'Test',
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/Test.vue'),
-      meta: { layout: LayoutA }
+      meta: { layout: LayoutB }
   }
 ];
 

@@ -2,23 +2,29 @@
   --header: #FFD600
   --white-color: #FFF6C9
 
-[data-theme="dark"]
-  --bg-color1: #121416
-  --font-color: #f4f4f4
+[data-theme="blue"]
+  // --bg-color1: #121416
+  // --font-color: #f4f4f4
+  background-image: url('./img/background_blue.png')
 
-[data-theme="light"]
-  --bg-color1: #f4f4f4
+[data-theme="pink"]
+  --bg-color1: #f8e9dc
   --font-color: #121416
+  background-image: url('./img/background_pink.png')
+
 body
   background-color: var(--bg-color1)
   color: var(--font-color)
   font-family: 'Microsoft Sans Serif'
+  background-repeat: no-repeat
+  background-position-x: right
+  background-size: 55% 100%
+  background-attachment: fixed
 
 #app
   margin: 0 auto
   font-weight: normal
   min-height: 100vh
-
 
 .container
   max-width: 1440px
@@ -34,3 +40,16 @@ body
 
 .flex-column
   flex-direction: column
+
+.flex-wrap
+  flex-wrap: wrap
+
+
+.p-button
+  background: #2A588B!important
+  border-color: #2A588B!important
+  &:hover
+    background: #2A588B!important
+    border-color: #2A588B!important
+  & .p-button-label
+    font-weight: 400

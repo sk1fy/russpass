@@ -1,11 +1,15 @@
-<script>
-export default {
-  name: "AppLayoutDefault",
-}
+<script setup>
+import { onMounted, inject } from 'vue';
+
+
+const { setPinkTheme } = inject('mainTheme')
+onMounted(() => {
+  setPinkTheme()
+});
 </script>
+
 <template>
   <div class="default-layout">
-    <header class="header" >App Layout Default</header>
     <slot />
   </div>
 </template>

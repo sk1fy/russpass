@@ -1,7 +1,28 @@
 <script setup>
+import { provide, ref } from 'vue'
+import AppHeader from './components/header/AppHeader.vue'
+
+  const theme = ref(null);
+  function setPinkTheme() {
+    const body = document.body
+    theme.value = 'pink'
+    body.dataset.theme = theme.value
+  }
+  function setBlueTheme() {
+    var body = document.body
+    theme.value = 'blue'
+    body.dataset.theme = theme.value
+  }
+
+  provide('mainTheme', {
+    theme,
+    setPinkTheme,
+    setBlueTheme
+  })
 </script>
 
 <template>
+  <AppHeader />
   <main>
     <div class="container">
       <component :is="this.$route.meta.layout || 'div'">
