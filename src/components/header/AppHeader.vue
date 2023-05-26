@@ -22,4 +22,5 @@
 <style lang="sass">
 .app-header
   justify-content: space-between
+  margin-bottom: 1.25rem
 </style>

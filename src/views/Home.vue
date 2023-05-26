@@ -9,7 +9,14 @@ export default {
 <template>
   <div class="home-view d-flex flex-column">
     <HomeRecommendation />
-    <img src="../assets/img/traveling_back_to_home.png" alt="traveling_back_to_home" style="align-self: center;">
+    <div class="traveling-to-home">
+      <img src="../assets/img/traveling_back_to_home.png" alt="traveling_back_to_home" style="align-self: center;">
+    </div>
     <Inspiration />
   </div>
 </template>
+
+<style lang="sass">
+.traveling-to-home
+  margin: 1.25rem auto 1.5rem
+</style>

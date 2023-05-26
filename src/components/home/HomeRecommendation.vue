@@ -5,9 +5,9 @@ import HomeRecommendationItem from './HomeRecommendationItem.vue';
 
 const recommendationItems = ref(
   [
-    { title: 'Чтобы понять,какой отдых станет для тебя идеальным,пройди тест' },
-    { title: 'Пользуешься рекомендациями поисковых запросов? Тебе сюда' },
-    { title: 'Знаешь,куда хочешь поехать? Поможем спланировать новое путешествие в 2 клика' }
+    { title: 'Чтобы понять,какой отдых станет для тебя идеальным,пройди тест', btnName: 'Рекомендации по характеру' },
+    { title: 'Пользуешься рекомендациями поисковых запросов? Тебе сюда', btnName: 'Рекомендации нейросети' },
+    { title: 'Знаешь,куда хочешь поехать? Поможем спланировать новое путешествие в 2 клика', btnName: 'Спалнировать' }
   ]
 )
 
@@ -19,6 +19,7 @@ const recommendationItems = ref(
     <HomeRecommendationItem
       v-for="(item, index) in recommendationItems"
       :title=item.title
+      :btn-name=item.btnName
       :id=index
     />
   </div>
@@ -27,4 +28,5 @@ const recommendationItems = ref(
 <style lang="sass">
 .home-recommendation
   gap: 1.25rem
+  margin-top: 1.25rem
 </style>

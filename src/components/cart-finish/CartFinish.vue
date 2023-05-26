@@ -1,5 +1,5 @@
 <template>
   <div>
-    Test
+    Cart Finish
   </div>
 </template>

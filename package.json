@@ -8,11 +8,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/interaction": "^6.1.8",
+    "@fullcalendar/timegrid": "^6.1.8",
+    "@fullcalendar/vue3": "^6.1.8",
+    "axios": "^1.4.0",
     "pinia": "^2.0.35",
     "primeicons": "^6.0.1",
     "primevue": "^3.29.0",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.0"
+    "vue-router": "^4.2.0",
+    "vue-uuid": "^3.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.1",

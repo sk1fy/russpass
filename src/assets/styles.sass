@@ -1,6 +1,9 @@
 :root
   --header: #FFD600
   --white-color: #FFF6C9
+  --my-primary-color: #2A588B
+  --secondary-color: #FF3C1F
+  --default-color: #000000
 
 [data-theme="blue"]
   // --bg-color1: #121416
@@ -20,6 +23,7 @@ body
   background-position-x: right
   background-size: 55% 100%
   background-attachment: fixed
+  padding-bottom: 5rem
 
 #app
   margin: 0 auto
@@ -31,6 +35,13 @@ body
   margin: auto
   @media (max-width: 1024px)
     padding: 0 6.4px
+
+a
+  text-decoration: none
+
+input[type="text"]
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  border-radius: 15px
 
 .d-flex
   display: flex
@@ -44,12 +55,56 @@ body
 .flex-wrap
   flex-wrap: wrap
 
+.flex-1
+  flex: 1
 
-.p-button
-  background: #2A588B!important
-  border-color: #2A588B!important
+.flex-2
+  flex: 2
+
+.flex-3
+  flex: 3
+
+.align-center
+  align-items: center
+
+.space-between
+  justify-content: space-between
+
+.space-center
+  justify-content: center
+
+.mt-auto
+  margin-top: auto
+
+
+.p-button.primary
+  background: var(--my-primary-color)!important
+  border-color: var(--my-primary-color)!important
   &:hover
-    background: #2A588B!important
-    border-color: #2A588B!important
+    background: var(--my-primary-color)!important
+    border-color: var(--my-primary-color)!important
   & .p-button-label
     font-weight: 400
+
+.p-button.secondary
+  background: var(--secondary-color)!important
+  border-color: var(--secondary-color)!important
+  &:hover
+    background: var(--secondary-color)!important
+    border-color: var(--secondary-color)!important
+  & .p-button-label
+    font-weight: 400
+
+
+.pulse:hover,
+.pulse:focus
+  animation: pulse .7s
+  box-shadow: 0 0 0 .5em transparent
+
+
+
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0 0 var(--my-primary-color)
+
+
