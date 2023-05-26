@@ -14,7 +14,7 @@ const travelId = uuid.v1().substring(0,4)
 </script>
 <template>
   <div class="my-travel-view d-flex flex-column">
-    <h4>Мои путешествия</h4>
+    <h4>Мои путешествия1</h4>
     <MyTravelHeader />
     <div class="my-travel-back d-flex">
       <Button class="primary" label="Назад" @click="goBack()" />
