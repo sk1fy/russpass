@@ -6,7 +6,14 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import ruLocale from '@fullcalendar/core/locales/ru'
+import { useRouter } from 'vue-router'
 
+
+const props = defineProps({
+  travelId: String,
+})
+
+const router = useRouter()
 // const idValue = ref(1)
 const options = reactive({
   plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
@@ -51,16 +58,12 @@ const addNewEvent = (arg) => {
   </div>
   <div class="calendar-navs d-flex space-between">
     <div class="d-flex flex-column">
-      <Button class="secondary" label="Сохранить" @click="addNewEvent" />
-      <Button class="secondary" label="Забронировать и оплатить" @click="addNewEvent" />
+      <Button class="secondary" label="Забронировать" @click="router.push(`/book/${props.travelId}`)" />
+      <Button class="secondary" label="Оплатить" @click="router.push(`/cart/${props.travelId}`)" />
     </div>
     <div class="btns d-flex flex-column align-center">
-      <router-link to="/chat">
-        <Button class="primary pulse" label="Рекомендации нейросети" />
-      </router-link>
-      <router-link to="/test">
-        <Button class="primary pulse" label="Рекомендации по характеру" />
-      </router-link>
+      <Button class="primary pulse" label="Рекомендации нейросети" />
+      <Button class="primary pulse" label="Рекомендации по характеру" />
     </div>
   </div>
 </template>

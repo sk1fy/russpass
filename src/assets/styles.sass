@@ -4,6 +4,7 @@
   --my-primary-color: #2A588B
   --secondary-color: #FF3C1F
   --default-color: #000000
+  --medium-screen: 900px
 
 [data-theme="blue"]
   // --bg-color1: #121416
@@ -33,11 +34,14 @@ body
 .container
   max-width: 1440px
   margin: auto
-  @media (max-width: 1024px)
+  @media (max-width: var(--medium-screen))
     padding: 0 6.4px
 
 a
   text-decoration: none
+
+img
+  width: 100%
 
 input[type="text"]
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -45,6 +49,8 @@ input[type="text"]
 
 .d-flex
   display: flex
+  @media (max-width: 900px)
+    flex-wrap: wrap
 
 .flex-row
   flex-direction: row
@@ -95,6 +101,9 @@ input[type="text"]
   & .p-button-label
     font-weight: 400
 
+.fc-button-primary
+  background: var(--my-primary-color)!important
+  border-color: var(--my-primary-color)!important
 
 .pulse:hover,
 .pulse:focus

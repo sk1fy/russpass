@@ -28,10 +28,17 @@ const travel_types = ['Транспорт', 'Отели', 'Развлечени�
 <style lang="sass">
 .travel-type-block
   margin-top: 3rem
-  // & h3
-  //   font-weight: normal
+  & h3
+    @media (max-width: 568px)
+      text-align: center
+  & .d-flex
+    @media (max-width: 568px)
+      width: 100%
+      max-width: 100%
   &__wrapper
     gap: 1.5rem
+    @media (max-width: 568px)
+      padding: 0 4rem
   &__card
     border: 2px solid var(--secondary-color)
     border-radius: 1rem

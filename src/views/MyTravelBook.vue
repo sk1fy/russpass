@@ -1,9 +1,11 @@
 <script setup>
-import { useRoute } from 'vue-router';
-import { ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { ref, watch, computed } from 'vue'
 
-import MyTravelHeader from '../components/global/my-travel-header/MyTravelHeader.vue';
+import MyTravelHeader from '../components/global/my-travel-header/MyTravelHeader.vue'
 
+
+const router = useRouter()
 const route = useRoute()
 const bookId = route.params.id
 
@@ -26,12 +28,19 @@ watch(checkedAll, (newX) => {
     selectedCategories.value = []
   }
 })
+
+const isFinish = computed(() => {
+  if(route.path.includes('finish')) {
+    return true
+  } else {
+    return false
+  }
+})
 </script>
 <template>
   <div class="my-travel-book-view">
     <MyTravelHeader />
-    {{ bookId }}
-    <div>
+    <div v-if="!isFinish">
       <div>
         <ToggleButton v-model="checkedAll" onLabel="Убрать все" offLabel="Выбрать все"
             onIcon="pi pi-times" offIcon="pi pi-check" />
@@ -42,8 +51,18 @@ watch(checkedAll, (newX) => {
             <label :for="category.key">{{ category.name }}</label>
         </div>
       </div>
+      <div class="travel-navs d-flex space-between">
+        <div class="d-flex flex-column">
+          <Button class="secondary" label="Назад" @click="router.back()" />
+          <Button class="secondary" label="Забронировать" @click="router.push(`/book/${route.params.id}/finish`)" />
+        </div>
+        <div class="btns d-flex flex-column align-center">
+          <Button class="primary pulse" label="Рекомендации нейросети" />
+          <Button class="primary pulse" label="Рекомендации по характеру" />
+        </div>
+      </div>
     </div>
-    <router-view></router-view>
+    <router-view else></router-view>
   </div>
 </template>
 
@@ -73,4 +92,9 @@ watch(checkedAll, (newX) => {
     & .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover
       background: var(--secondary-color)
       border-color: var(--secondary-color)
+
+.travel-navs
+  margin-top: 6rem
+  & div
+    gap: 1.5rem
 </style>

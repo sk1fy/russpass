@@ -22,7 +22,7 @@ import SelectButton from "primevue/selectbutton"
 import Rating from 'primevue/rating'
 import Checkbox from 'primevue/checkbox'
 import ToggleButton from 'primevue/togglebutton'
-
+import Carousel from 'primevue/carousel'
 
 const app = createApp(App)
 
@@ -52,6 +52,8 @@ app.component('SelectButton',SelectButton)
 app.component('Rating',Rating)
 app.component('Checkbox',Checkbox)
 app.component('ToggleButton',ToggleButton)
+app.component('Carousel',Carousel)
+
 
 
 

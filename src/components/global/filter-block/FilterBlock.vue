@@ -87,7 +87,7 @@ const popupValYouth = ref(0)
         </OverlayPanel>
       </div>
       <div class="date-pick d-flex flex-1">
-        <Calendar v-model="date" dateFormat="mm/yy" placeholder="Даты"/>
+        <Calendar v-model="date" selectionMode="range" :manualInput="false" :minDate="new Date()" dateFormat="dd/mm/yy" placeholder="Даты"/>
       </div>
       <div class="nights d-flex flex-1 align-center">Количество ночей {{ night_count ?? '__' }}</div>
     </div>
@@ -136,7 +136,7 @@ const popupValYouth = ref(0)
           <label for="rest-checkbox">Заполнить избранным</label>
         </div>
         <div class="d-flex mt-auto">
-          <router-link to="/chat">
+          <router-link to="/my_travel">
             <Button class="secondary" size="large" label="Подобрать" />
           </router-link>
         </div>
@@ -150,6 +150,8 @@ const popupValYouth = ref(0)
   &-top
     gap: 1.5rem
     margin-bottom: 3rem
+    @media (max-width: 900px)
+      flex-direction: column
     & .peoples
       background: #FFFFFF
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -158,6 +160,8 @@ const popupValYouth = ref(0)
       justify-content: center
       gap: 10px
       cursor: pointer
+      @media (max-width: 900px)
+        padding: .5rem
       & div span:first-child
         margin-right: 10px
     & .nights
@@ -166,9 +170,18 @@ const popupValYouth = ref(0)
       border-radius: 15px
       justify-content: center
       cursor: pointer
+      @media (max-width: 900px)
+        padding: .5rem
   & .p-calendar
     width: 100%
   &-bot
+    @media (max-width: 568px)
+      flex-direction: column
+      align-items: center
+      gap: 1.5rem
+      & a
+        width: 100%
+        margin-top: 1rem
     & .select-box
       margin-top: auto
       & .p-selectbutton

@@ -1,6 +1,9 @@
 <script setup>
 import { provide, ref } from 'vue'
 import AppHeader from './components/header/AppHeader.vue'
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
 
   const theme = ref(null);
   function setPinkTheme() {
@@ -25,7 +28,7 @@ import AppHeader from './components/header/AppHeader.vue'
   <AppHeader />
   <main>
     <div class="container">
-      <component :is="this.$route.meta.layout || 'div'">
+      <component :is="route.meta.layout || 'div'">
           <router-view />
       </component>
     </div>

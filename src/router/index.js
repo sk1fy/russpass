@@ -66,6 +66,22 @@ const routes = [
     ]
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/Profile.vue'),
+    meta: { layout: LayoutB },
+    children: [
+      {
+        path: 'trips',
+        name: 'ProfileTrips',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../components/profile-trips/ProfileTrips.vue'),
+          meta: { layout: LayoutDefult },
+      },
+    ]
+  },
+  {
     path: '/test',
     name: 'Test',
     component: () =>
@@ -83,7 +99,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('sk1fy.github.io/'),
   routes
 });
 

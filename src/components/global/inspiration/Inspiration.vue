@@ -36,6 +36,9 @@ export default {
     line-height: 150%
   &__travels
     justify-content: space-between
+    @media (max-width: 568px)
+      justify-content: center
+      gap: 1.5rem
     &__item
       justify-content: center
       &__pic

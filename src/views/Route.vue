@@ -19,7 +19,7 @@ export default {
 </script>
 <template>
   <div class="route-view d-flex flex-column">
-    <div class="d-flex space-between">
+    <div class="route-view-main d-flex space-between">
       <div class="d-flex flex-column flex-1">
         <h2 class="title">Маршрут</h2>
         <InputRoute />
@@ -38,12 +38,8 @@ export default {
           <img src="@/assets/img/image365.png" alt="map" @click="check">
         </div>
         <div class="btns d-flex flex-column align-center">
-          <router-link to="/chat">
-            <Button class="primary pulse" label="Рекомендации нейросети" />
-          </router-link>
-          <router-link to="/test">
-            <Button class="primary pulse" label="Рекомендации по характеру" />
-          </router-link>
+          <Button class="primary pulse" label="Рекомендации нейросети" />
+          <Button class="primary pulse" label="Рекомендации по характеру" />
         </div>
       </div>
     </div>
@@ -53,6 +49,10 @@ export default {
 
 <style lang="sass">
 .route-view
+  &-main
+    @media (max-width: 900px)
+      flex-direction: column
+      gap: 2rem
   & .title
     font-weight: 400
     font-size: 3rem
@@ -64,5 +64,10 @@ export default {
     gap: 1.5rem
   &-nav
     margin-top: auto
+    @media (max-width: 900px)
+      flex-direction: column-reverse
+      align-items: center
+      gap: 1rem
+      margin-top: 2rem
 
 </style>

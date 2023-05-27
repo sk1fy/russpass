@@ -21,7 +21,7 @@ const travelId = uuid.v1().substring(0,4)
     </div>
     <div>{{ travelId }}</div>
     <div>
-      <EventCalendar />
+      <EventCalendar :travel-id="travelId"/>
     </div>
   </div>
 </template>
